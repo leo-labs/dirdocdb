@@ -24,6 +24,10 @@ namespace DDDTesting {
 			var nauto = db.Find<Auto>(auto.Key);
 
 			Console.WriteLine(string.Join(",", nauto.Passagiere));
+			db.Delete<Auto>(nauto);
+			var nnauto = db.Find<Auto>(auto.Key);
+			Console.WriteLine(string.Join(",", nnauto.Passagiere));
+			
 			Console.Write("Close?");
 			Console.ReadLine();
 		}

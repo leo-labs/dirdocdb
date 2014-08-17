@@ -129,7 +129,7 @@ namespace DirDocDB {
 			var odir = getDirForObj(tdir, ref id);
 
 			if (odir != null) {
-				odir.Delete();
+				odir.Delete(true);
 				return true;
 			}
 
