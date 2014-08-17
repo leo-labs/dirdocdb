@@ -22,11 +22,13 @@ namespace DDDTesting {
 			Console.ReadLine();
 
 			var nauto = db.Find<Auto>(auto.Key);
-
-			Console.WriteLine(string.Join(",", nauto.Passagiere));
+			if(nauto != null)
+				Console.WriteLine(string.Join(",", nauto.Passagiere));
 			db.Delete<Auto>(nauto);
+
 			var nnauto = db.Find<Auto>(auto.Key);
-			Console.WriteLine(string.Join(",", nnauto.Passagiere));
+			if(nnauto != null)
+				Console.WriteLine(string.Join(",", nnauto.Passagiere));
 			
 			Console.Write("Close?");
 			Console.ReadLine();

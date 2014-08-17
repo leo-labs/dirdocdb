@@ -206,9 +206,14 @@ namespace DirDocDB {
 			var type = typeof(T);
 			var tdir = getDirForType(type);
 
-			var odir = getDirForObj(tdir, ref id);
+			if(tdir == null)
+				return null;
 
+			var odir = getDirForObj(tdir, ref id);
+			if(odir == null)
+				return null;
 			return parse<T>(odir);
+
 		}
 
 		public IEnumerable<T> GetAll<T>() where T : Entity {
